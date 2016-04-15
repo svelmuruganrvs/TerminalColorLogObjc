@@ -73,34 +73,39 @@ void alog(NSString *attributedMessage) {
     
 }
 
-void wlog(NSString *warningMessage){
-    printf("****%s%s%s%s****\n",[keyForProperty([NSNumber numberWithInt:kResetAll]) UTF8String],[keyForProperty([NSNumber numberWithInt:kFYellowColor]) UTF8String],[parseMessageForLog(warningMessage) UTF8String],[keyForProperty([NSNumber numberWithInt:kFDefaultColor]) UTF8String]);
+void wlog(NSString *warningMessage) {
     
+    printf("****%s%s%s%s****\n",[keyForProperty([NSNumber numberWithInt:kResetAll]) UTF8String],[keyForProperty([NSNumber numberWithInt:kFYellowColor]) UTF8String],[parseMessageForLog(warningMessage) UTF8String],[keyForProperty([NSNumber numberWithInt:kFDefaultColor]) UTF8String]);
     
 }
 
-void elog(NSString *errorMessage){
+void elog(NSString *errorMessage) {
+    
     printf("####%s%s%s%s####\n",[keyForProperty([NSNumber numberWithInt:kResetAll]) UTF8String],[keyForProperty([NSNumber numberWithInt:kFRedColor]) UTF8String],[parseMessageForLog(errorMessage) UTF8String],[keyForProperty([NSNumber numberWithInt:kFDefaultColor]) UTF8String]);
     
 }
 
-void ilog(NSString *informationMessage){
+void ilog(NSString *informationMessage) {
+    
     printf("####%s%s%s%s####\n",[keyForProperty([NSNumber numberWithInt:kResetAll]) UTF8String],[keyForProperty([NSNumber numberWithInt:kFBlue]) UTF8String],[parseMessageForLog(informationMessage) UTF8String],[keyForProperty([NSNumber numberWithInt:kFDefaultColor]) UTF8String]);
     
 }
 
-void slog(NSString *successMessage){
+void slog(NSString *successMessage) {
+    
     printf("####%s%s%s%s####\n",[keyForProperty([NSNumber numberWithInt:kResetAll]) UTF8String],[keyForProperty([NSNumber numberWithInt:kFGreenColor]) UTF8String],[parseMessageForLog(successMessage) UTF8String],[keyForProperty([NSNumber numberWithInt:kFDefaultColor]) UTF8String]);
     
 }
 
 #pragma mark - private methods.
-NSString* keyForProperty(NSNumber *key){
+NSString* keyForProperty(NSNumber *key) {
+    
     NSString *string = [NSString stringWithFormat:@"\e[%dm",[key intValue]];
     return string;
 }
 
 NSString* parseMessageForLog(NSString *string) {
+    
     NSRange r;
     NSString *s = [string copy];
     NSString *replaceString = @"";
@@ -165,5 +170,6 @@ NSString* parseMessageForLog(NSString *string) {
         replacableString = [NSNumber numberWithInt:0];;
     }
     return s;
+    
 }
 
