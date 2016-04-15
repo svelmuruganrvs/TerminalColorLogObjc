@@ -6,7 +6,7 @@
 **Which project is best fit this library?**
 > Command line tools like projectin Xcode.
 
-Check the code documentation<a href="http://doc.colorlog.iosvelmurugan.com/index.html" target="_blank">here</a>. <br>
+Check the code documentation <a href="http://doc.colorlog.iosvelmurugan.com/index.html" target="_blank">here</a>. <br>
 
 
 Sample Output<br>
